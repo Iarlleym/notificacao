@@ -8,7 +8,7 @@ spring:
 
     username: iarlleymangueira@gmail.com
 
-    password: cvfs ljkx grgq rqev
+    password:
 
     protocol: smtp
 
