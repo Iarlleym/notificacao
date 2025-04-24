@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembrete de Tarefa</title>
+    <style>
+        body {
+            background: #f2f4f8;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-wrapper {
+            max-width: 640px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #6c63ff, #48c6ef);
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .email-header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .email-body {
+            padding: 30px 40px;
+            color: #333;
+        }
+
+        .email-body p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .task-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #6c63ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .task-box h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        .task-box p {
+            margin: 10px 0 0 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) {
+            .email-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="email-wrapper">
+    <div class="email-header">
+        <h1>📅 Lembrete de Tarefa</h1>
+    </div>
+    <div class="email-body">
+        <p>Olá!</p>
+        <p>Você tem uma tarefa importante agendada para hoje:</p>
+
+        <div class="task-box">
+            <h2 th:text="${nomeTarefa}">Nome da Tarefa</h2>
+            <p><strong>Horário:</strong> <span th:text="${dataEvento}">00:00</span></p>
+            <p><strong>Descrição:</strong></p>
+            <p th:text="${descricao}">Descrição da tarefa que será substituída dinamicamente.</p>
+        </div>
+
+        <p>Fique atento(a) e tenha um ótimo dia! 🚀</p>
+    </div>
+    <div class="email-footer">
+        <p>Obrigado por usar nosso sistema de tarefas.<br/>Equipe EngCode</p>
+    </div>
+</div>
+</body>
+</html>
